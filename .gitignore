@@ -1,0 +1,28 @@
+# Backend
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.db
+backend/.env
+backend/.pytest_cache/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# AI
+ai/model/*.pt
+ai/evidence/*
+!ai/evidence/.gitkeep
+
+# Uploads (evidence storage)
+uploads/images/*
+uploads/videos/*
+!uploads/images/.gitkeep
+!uploads/videos/.gitkeep
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

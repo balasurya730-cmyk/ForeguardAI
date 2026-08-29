@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.env
+forgeguard.db
+.pytest_cache/
+venv/

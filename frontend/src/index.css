@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    background-color: #0a0d11;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-attachment: fixed;
+  }
+  ::selection {
+    background-color: #2dd4c8;
+    color: #0a0d11;
+  }
+  *:focus-visible {
+    outline: 2px solid #2dd4c8;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-base-800/80 border border-base-600 rounded-lg shadow-panel backdrop-blur-sm;
+  }
+  .status-dot {
+    @apply inline-block w-2 h-2 rounded-full;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono font-medium tracking-wide uppercase;
+  }
+  .badge-normal {
+    @apply badge bg-signal-cyanDim/40 text-signal-cyan border border-signal-cyan/30;
+  }
+  .badge-warning {
+    @apply badge bg-signal-amberDim/40 text-signal-amber border border-signal-amber/30;
+  }
+  .badge-critical {
+    @apply badge bg-signal-redDim/40 text-signal-red border border-signal-red/30;
+  }
+  .badge-offline {
+    @apply badge bg-base-600/60 text-ink-500 border border-base-500;
+  }
+  .btn-primary {
+    @apply bg-signal-cyan text-base-950 font-medium px-4 py-2 rounded-md hover:brightness-110 transition disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-base-700 text-ink-900 font-medium px-4 py-2 rounded-md border border-base-500 hover:bg-base-600 transition disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-danger {
+    @apply bg-signal-red/90 text-base-950 font-medium px-4 py-2 rounded-md hover:brightness-110 transition disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .input-field {
+    @apply bg-base-900 border border-base-500 rounded-md px-3 py-2 text-sm text-ink-900 placeholder:text-ink-500 focus:border-signal-cyan focus:outline-none transition;
+  }
+  .live-pulse {
+    @apply relative inline-flex w-2 h-2 rounded-full bg-signal-cyan;
+  }
+  .live-pulse::after {
+    content: '';
+    @apply absolute inset-0 rounded-full bg-signal-cyan animate-ping;
+  }
+}

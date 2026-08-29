@@ -1,0 +1,10 @@
+ultralytics==8.3.0
+opencv-python==4.10.0.84
+numpy==1.26.4
+requests==2.32.3
+
+# Note: ultralytics/opencv are heavy and only required for LIVE camera
+# inference with real trained weights. ai/detection.py and ai/tracking.py
+# both fall back to lightweight synthetic/IoU-based logic when these
+# aren't installed or no weights are present at ai/model/, so the demo
+# pipeline (ai/rules.py in DEMO mode) only strictly needs `requests`.
