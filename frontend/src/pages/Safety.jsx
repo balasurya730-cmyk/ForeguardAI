@@ -38,11 +38,12 @@ export default function Safety() {
   const [events, setEvents] = useState([])
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState('ALL')
+  const [dateFilter, setDateFilter] = useState('ALL')
   const [selectedEvidence, setSelectedEvidence] = useState(null)
   const { on } = useWebSocketContext()
 
   useEffect(() => {
-    safetyService.listEvents(200).then((data) => {
+    safetyService.listEvents(2000).then((data) => {
       setEvents(data)
       setLoading(false)
     })
@@ -54,7 +55,35 @@ export default function Safety() {
     })
   }, [on])
 
-  const filtered = filter === 'ALL' ? events : events.filter((e) => e.violation_type === filter)
+  const allEventsWithDates = events.map(event => {
+    const dateObj = new Date(event.timestamp)
+    const today = new Date()
+    const yesterday = new Date(today)
+    yesterday.setDate(yesterday.getDate() - 1)
+
+    let dateLabel = dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+    if (dateObj.toDateString() === today.toDateString()) dateLabel = 'Today'
+    else if (dateObj.toDateString() === yesterday.toDateString()) dateLabel = 'Yesterday'
+    
+    return { ...event, dateLabel }
+  })
+
+  // Unique dates for dropdown
+  const availableDates = [...new Set(allEventsWithDates.map(e => e.dateLabel))]
+
+  // Apply both filters
+  const filtered = allEventsWithDates.filter(e => {
+    const typeMatch = filter === 'ALL' || e.violation_type === filter
+    const dateMatch = dateFilter === 'ALL' || e.dateLabel === dateFilter
+    return typeMatch && dateMatch
+  })
+
+  // Group events by date
+  const groupedEvents = filtered.reduce((acc, event) => {
+    if (!acc[event.dateLabel]) acc[event.dateLabel] = []
+    acc[event.dateLabel].push(event)
+    return acc
+  }, {})
 
   if (loading) return <LoadingState label="Loading detections..." />
 
@@ -64,12 +93,17 @@ export default function Safety() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-base-950/80 backdrop-blur-sm p-4" onClick={() => setSelectedEvidence(null)}>
           <div className="bg-base-900 border border-base-600 rounded-lg overflow-hidden max-w-2xl w-full shadow-2xl" onClick={e => e.stopPropagation()}>
             <div className="p-3 border-b border-base-600 flex justify-between items-center bg-base-800">
-              <h3 className="font-display font-semibold text-sm text-ink-900">Photographic Evidence</h3>
+              <h3 className="font-display font-semibold text-sm text-ink-900">
+                Photographic Evidence
+                <span className="ml-3 font-mono text-xs text-ink-500 font-normal">
+                  {new Date(selectedEvidence.timestamp).toLocaleString()}
+                </span>
+              </h3>
               <button onClick={() => setSelectedEvidence(null)} className="text-ink-500 hover:text-ink-900 text-lg leading-none">&times;</button>
             </div>
             <div className="aspect-video bg-base-950 flex items-center justify-center relative">
               <img
-                src={selectedEvidence}
+                src={selectedEvidence.evidence_path}
                 alt="Evidence"
                 className="w-full h-full object-contain"
                 onError={(ev) => {
@@ -92,11 +126,22 @@ export default function Safety() {
         </div>
         <div className="flex items-center gap-2">
           <Filter size={16} className="text-ink-500" />
-          <select
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-            className="input-field py-1.5 text-xs bg-base-900 appearance-none"
-          >
+          <div className="flex gap-2">
+            <select
+              value={dateFilter}
+              onChange={(e) => setDateFilter(e.target.value)}
+              className="input-field py-1.5 text-xs bg-base-900 appearance-none"
+            >
+              <option value="ALL">All Dates</option>
+              {availableDates.map(date => (
+                <option key={date} value={date}>{date}</option>
+              ))}
+            </select>
+            <select
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
+              className="input-field py-1.5 text-xs bg-base-900 appearance-none"
+            >
             <option value="ALL">All Detections</option>
             <optgroup label="Hazards">
               <option value="NO_HELMET">NO Helmet</option>
@@ -124,44 +169,56 @@ export default function Safety() {
               <option value="UNIFORM">Uniform</option>
             </optgroup>
           </select>
+          </div>
         </div>
       </div>
 
-      {filtered.length === 0 ? (
+      {Object.keys(groupedEvents).length === 0 ? (
         <EmptyState title="No detections logged" description="The camera feed hasn't flagged any events." />
       ) : (
-        <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
-          {filtered.map((e) => {
-            const config = TYPE_CONFIG[e.violation_type] || { label: e.violation_type, icon: ShieldAlert, color: 'text-signal-amber' }
-            const Icon = config.icon
-            return (
-              <div key={e.id} className="panel overflow-hidden">
-                <div className="p-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Icon size={16} className={config.color} />
-                    <span className="font-medium text-sm text-ink-900">{config.label}</span>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2 text-xs font-mono text-ink-500 mb-2">
-                    <div>Worker: {e.worker_id ? `#${e.worker_id}` : '—'}</div>
-                    <div>Camera: {e.camera_id ? `C${String(e.camera_id).padStart(2, '0')}` : '—'}</div>
-                    <div>Confidence: {Math.round(e.confidence * 100)}%</div>
-                    <div>Duration: {e.duration_seconds}s</div>
-                  </div>
-                  <div className="flex items-center justify-between mt-3 pt-3 border-t border-base-600/50">
-                    <div className="text-[11px] font-mono text-ink-500">{new Date(e.timestamp).toLocaleString()}</div>
-                    {e.evidence_path && (
-                      <button 
-                        onClick={() => setSelectedEvidence(e.evidence_path)}
-                        className="text-[11px] font-mono text-signal-cyan hover:underline flex items-center gap-1 bg-signal-cyan/10 px-2 py-1 rounded"
-                      >
-                        View Evidence
-                      </button>
-                    )}
-                  </div>
-                </div>
+        <div className="space-y-10">
+          {Object.entries(groupedEvents).map(([dateLabel, dateEvents]) => (
+            <div key={dateLabel}>
+              <h2 className="font-display font-semibold text-ink-900 text-lg mb-4 border-b border-base-600 pb-2">
+                {dateLabel} <span className="text-sm font-normal text-ink-500 ml-2">({dateEvents.length} events)</span>
+              </h2>
+              <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                {dateEvents.map((e) => {
+                  const config = TYPE_CONFIG[e.violation_type] || { label: e.violation_type, icon: ShieldAlert, color: 'text-signal-amber' }
+                  const Icon = config.icon
+                  return (
+                    <div key={e.id} className="panel overflow-hidden">
+                      <div className="p-4">
+                        <div className="flex items-center gap-2 mb-3">
+                          <Icon size={16} className={config.color} />
+                          <span className="font-medium text-sm text-ink-900">{config.label}</span>
+                        </div>
+                        <div className="grid grid-cols-2 gap-2 text-xs font-mono text-ink-500 mb-2">
+                          <div>Worker: {e.worker_id ? `#${e.worker_id}` : '—'}</div>
+                          <div>Camera: {e.camera_id ? `C${String(e.camera_id).padStart(2, '0')}` : '—'}</div>
+                          <div>Confidence: {Math.round(e.confidence * 100)}%</div>
+                          <div>Duration: {e.duration_seconds}s</div>
+                        </div>
+                        <div className="flex items-center justify-between mt-3 pt-3 border-t border-base-600/50">
+                          <div className="text-[11px] font-mono text-ink-500">
+                            {new Date(e.timestamp).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit' })}
+                          </div>
+                          {e.evidence_path && (
+                            <button 
+                              onClick={() => setSelectedEvidence(e)}
+                              className="text-[11px] font-mono text-signal-cyan hover:underline flex items-center gap-1 bg-signal-cyan/10 px-2 py-1 rounded"
+                            >
+                              View Evidence
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
-            )
-          })}
+            </div>
+          ))}
         </div>
       )}
     </div>
