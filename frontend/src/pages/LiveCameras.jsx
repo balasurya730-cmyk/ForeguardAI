@@ -1,12 +1,30 @@
 import { useState, useEffect } from 'react'
-import { Camera, Radio, Maximize2, ShieldAlert } from 'lucide-react'
+import { Camera, Radio, Maximize2, ShieldAlert, Power, PowerOff } from 'lucide-react'
 
 export default function LiveCameras() {
   const [streamError, setStreamError] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(false)
+  const [aiEnabled, setAiEnabled] = useState(true)
 
   // This relies on the Python run_live_stream.py script running on port 8002
   const STREAM_URL = "http://127.0.0.1:8002/video_feed"
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:8002/api/detection_status')
+      .then(res => res.json())
+      .then(data => setAiEnabled(data.ai_enabled))
+      .catch(console.error)
+  }, [])
+
+  const toggleAi = async () => {
+    try {
+      const res = await fetch('http://127.0.0.1:8002/api/toggle_detection', { method: 'POST' })
+      const data = await res.json()
+      setAiEnabled(data.ai_enabled)
+    } catch (e) {
+      console.error(e)
+    }
+  }
 
   const toggleFullscreen = () => {
     const elem = document.getElementById('camera-feed')
@@ -86,8 +104,8 @@ export default function LiveCameras() {
                     <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                     LIVE REC
                   </div>
-                  <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-signal-cyan">
-                    AI YOLOv8 ENGINE ACTIVE &middot; 19 CLASSES
+                  <div className={`absolute bottom-4 left-4 bg-black/60 backdrop-blur px-2 py-1 rounded text-[10px] font-mono ${aiEnabled ? 'text-signal-cyan' : 'text-ink-500'}`}>
+                    {aiEnabled ? 'AI YOLOv8 ENGINE ACTIVE · 19 CLASSES' : 'AI ENGINE PAUSED · RAW FEED'}
                   </div>
                 </>
               )}
@@ -117,6 +135,18 @@ export default function LiveCameras() {
                 <span className="text-ink-900 font-medium text-signal-cyan">YOLOv8 Custom</span>
               </div>
             </div>
+            
+            <button 
+              onClick={toggleAi} 
+              className={`mt-4 w-full flex items-center justify-center gap-2 py-2 rounded-md text-sm font-medium transition-colors border ${
+                aiEnabled 
+                  ? 'bg-signal-red/10 text-signal-red border-signal-red/30 hover:bg-signal-red/20' 
+                  : 'bg-signal-cyan/10 text-signal-cyan border-signal-cyan/30 hover:bg-signal-cyan/20'
+              }`}
+            >
+              {aiEnabled ? <PowerOff size={16} /> : <Power size={16} />}
+              {aiEnabled ? 'Turn Off AI Detection' : 'Turn On AI Detection'}
+            </button>
           </div>
 
           <div className="panel p-5">

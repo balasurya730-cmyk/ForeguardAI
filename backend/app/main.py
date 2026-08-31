@@ -14,8 +14,9 @@ from app.websocket.manager import manager
 from app.services.runtime_service import runtime_monitor_loop
 from app.services.demo_simulator import demo_simulator_loop
 from app.services.mqtt_service import start_mqtt_client
+from app.services.pruner_service import auto_pruner_loop
 
-from app.routes import auth, machines, runtime, workers, safety, gas, alerts, reports, dashboard
+from app.routes import auth, machines, runtime, workers, safety, gas, alerts, reports, dashboard, export
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 logger = logging.getLogger("forgeguard.main")
@@ -42,6 +43,7 @@ app.include_router(gas.router)
 app.include_router(alerts.router)
 app.include_router(reports.router)
 app.include_router(dashboard.router)
+app.include_router(export.router)
 
 
 @app.get("/api/health")
@@ -83,6 +85,9 @@ async def on_startup():
 
     # Background: auto-stop machines whose configured runtime elapsed.
     asyncio.create_task(runtime_monitor_loop(SessionLocal))
+    
+    # Background: auto-prune old storage data
+    asyncio.create_task(auto_pruner_loop(SessionLocal))
 
     if settings.SYSTEM_MODE == "DEMO":
         logger.info("Starting in DEMO mode: built-in sensor/AI simulator active, no hardware required.")

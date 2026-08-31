@@ -29,9 +29,11 @@ cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
 cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
 
+# Global variables for threading
 latest_frame = None
 output_frame = None
 frame_lock = threading.Lock()
+ai_detection_enabled = True
 
 # Thread 1: Constantly read the camera as fast as possible to prevent buffer lag
 def camera_reader():
@@ -58,6 +60,12 @@ def process_camera():
                 
         if frame_to_process is None:
             time.sleep(0.05)
+            continue
+            
+        if not ai_detection_enabled:
+            with frame_lock:
+                output_frame = frame_to_process.copy()
+            time.sleep(0.03)
             continue
 
         # Run AI inference with an ultra-low global threshold, then filter specific classes in python
@@ -165,6 +173,17 @@ def generate():
 @app.route("/video_feed")
 def video_feed():
     return Response(generate(), mimetype="multipart/x-mixed-replace; boundary=frame")
+
+@app.route("/api/toggle_detection", methods=["POST"])
+def toggle_detection():
+    global ai_detection_enabled
+    ai_detection_enabled = not ai_detection_enabled
+    return {"status": "success", "ai_enabled": ai_detection_enabled}
+
+@app.route("/api/detection_status", methods=["GET"])
+def detection_status():
+    global ai_detection_enabled
+    return {"ai_enabled": ai_detection_enabled}
 
 if __name__ == '__main__':
     # Start high-speed camera reader thread to eliminate lag

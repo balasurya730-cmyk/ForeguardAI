@@ -8,6 +8,10 @@ from app.models.user import User
 from app.schemas.safety import SafetyEventOut, SafetyEventCreate, EvidenceOut
 from app.auth import get_current_user
 from app.services import safety_service
+from app.config import settings
+import base64
+import uuid
+import os
 
 router = APIRouter(tags=["safety"])
 
@@ -33,6 +37,30 @@ def get_safety_event(event_id: int, db: Session = Depends(get_db), _: User = Dep
 async def create_safety_event(payload: SafetyEventCreate, db: Session = Depends(get_db)):
     """Used by the AI pipeline (ai/rules.py) once a violation clears the
     persistence rule; also usable for manual testing."""
+    # Check if evidence_path is a base64 image
+    saved_path = payload.evidence_path
+    if payload.evidence_path and payload.evidence_path.startswith("data:image/"):
+        try:
+            # Extract the base64 string
+            header, encoded = payload.evidence_path.split(",", 1)
+            image_data = base64.b64decode(encoded)
+            
+            # Create evidence directory if it doesn't exist
+            evidence_dir = os.path.join(settings.UPLOADS_DIR, "evidence")
+            os.makedirs(evidence_dir, exist_ok=True)
+            
+            # Save the file
+            filename = f"evidence_{uuid.uuid4().hex}.jpg"
+            filepath = os.path.join(evidence_dir, filename)
+            with open(filepath, "wb") as f:
+                f.write(image_data)
+                
+            # Store the relative URL path in the DB
+            saved_path = f"/uploads/evidence/{filename}"
+        except Exception as e:
+            print(f"Failed to decode base64 evidence: {e}")
+            saved_path = None # Fallback to no image if it fails
+
     event = await safety_service.record_violation(
         db,
         worker_id=payload.worker_id,
@@ -40,7 +68,7 @@ async def create_safety_event(payload: SafetyEventCreate, db: Session = Depends(
         violation_type=payload.violation_type,
         confidence=payload.confidence,
         duration_seconds=payload.duration_seconds,
-        evidence_image_path=payload.evidence_path,
+        evidence_image_path=saved_path,
     )
     return event
 

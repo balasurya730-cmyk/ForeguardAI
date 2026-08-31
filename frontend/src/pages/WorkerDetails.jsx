@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { ArrowLeft, HardHat } from 'lucide-react'
+import { ArrowLeft, HardHat, Download } from 'lucide-react'
 import { LoadingState, EmptyState } from '../components/States.jsx'
 import { safetyService } from '../services/safetyService.js'
 
@@ -15,6 +15,26 @@ export default function WorkerDetails() {
       setEvents(e)
     })
   }, [id])
+
+  const handleDownloadZip = async () => {
+    try {
+      const response = await fetch(`http://127.0.0.1:8001/api/workers/${id}/export-evidence`, {
+        headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+      })
+      if (!response.ok) throw new Error('Failed to download evidence')
+      
+      const blob = await response.blob()
+      const url = window.URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `evidence_${worker.full_name.replace(/\s+/g, '_')}.zip`
+      document.body.appendChild(a)
+      a.click()
+      a.remove()
+    } catch (err) {
+      alert("Error exporting evidence: " + err.message)
+    }
+  }
 
   if (!worker) return <LoadingState label="Loading worker..." />
 
@@ -35,10 +55,17 @@ export default function WorkerDetails() {
         </div>
       </div>
 
-      <div>
-        <h2 className="font-display font-semibold text-ink-900 text-sm uppercase tracking-wide mb-3">
-          Violation History ({events.length})
-        </h2>
+      <div className="space-y-3">
+        <div className="flex items-center justify-between">
+          <h2 className="font-display font-semibold text-ink-900 text-sm uppercase tracking-wide">
+            Violation History ({events.length})
+          </h2>
+          {events.length > 0 && (
+            <button onClick={handleDownloadZip} className="btn btn-primary text-xs flex items-center gap-2 py-1.5 px-3">
+              <Download size={14} /> Export Evidence (.zip)
+            </button>
+          )}
+        </div>
         {events.length === 0 ? (
           <EmptyState title="Clean record" description="No safety violations recorded for this worker." />
         ) : (
