@@ -1,0 +1,40 @@
+# Ignore Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Ignore Raw Large Datasets and Runs
+1st/
+2nd/
+extract_folder/
+folder_name/
+archive/
+archive.zip
+dataset_archive.zip
+final/images/
+final/labels/
+runs/
+
+# Ignore Captured Evidence Images (to keep git push fast & light)
+static/evidence/*.jpg
+static/evidence/*.png
+
+# Ignore Python Cache
+__pycache__/
+*.py[cod]
+
+# Ignore Temp logs
+*.log
+
+# Keep Core Application Files, Models, and Configs
+!best.pt
+!final/data.yaml
+!web_app.py
+!templates/
+!run_laptop_camera.py
+!merge_dataset.py
+!train_final_yolo.py
+!resume_training.py
+!snapshot.py
+!README.md

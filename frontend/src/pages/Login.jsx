@@ -13,6 +13,7 @@ export default function Login() {
   const [email, setEmail] = useState('admin@forgeguard.ai')
   const [password, setPassword] = useState('')
   const [fullName, setFullName] = useState('')
+  const [role, setRole] = useState('OPERATOR')
   
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
@@ -32,6 +33,7 @@ export default function Login() {
       setEmail('')
       setPassword('')
       setFullName('')
+      setRole('OPERATOR')
     }
   }
 
@@ -54,8 +56,8 @@ export default function Login() {
     setError('')
     setLoading(true)
     try {
-      // Default to WORKER role for self-registration, or pass expected string
-      await register(fullName, email, password, 'worker')
+      // Create user with selected role
+      await register(fullName, email, password, role)
       navigate('/')
     } catch (err) {
       setError(err.response?.data?.detail || 'Registration failed. Please try again.')
@@ -150,8 +152,13 @@ export default function Login() {
                   Create one
                 </button>
               </p>
-              <div className="text-[11px] font-mono text-ink-500 text-center mt-3">
-                Seed logins: admin@forgeguard.ai / Admin@123
+              <div className="text-[11px] font-mono text-ink-500 mt-4 text-left p-3 bg-base-800 rounded">
+                <p className="font-semibold mb-1 text-ink-400">DEMO ACCOUNTS:</p>
+                <ul className="space-y-1">
+                  <li><strong>Worker:</strong> worker@forgeguard.ai / Worker@123</li>
+                  <li><strong>Manager:</strong> manager@forgeguard.ai / Manager@123</li>
+                  <li><strong>MD:</strong> md@forgeguard.ai / Md@123</li>
+                </ul>
               </div>
             </div>
           </form>
@@ -180,6 +187,18 @@ export default function Login() {
                 className="input-field w-full"
                 placeholder="you@forgeguard.ai"
               />
+            </div>
+            <div>
+              <label className="text-xs font-mono uppercase tracking-widest text-ink-500 block mb-1.5">System Role</label>
+              <select
+                value={role}
+                onChange={(e) => setRole(e.target.value)}
+                className="input-field w-full appearance-none bg-base-900"
+              >
+                <option value="OPERATOR">Worker</option>
+                <option value="MANAGER">Manager</option>
+                <option value="ADMIN">MD (Admin)</option>
+              </select>
             </div>
             <div>
               <label className="text-xs font-mono uppercase tracking-widest text-ink-500 block mb-1.5">Password</label>

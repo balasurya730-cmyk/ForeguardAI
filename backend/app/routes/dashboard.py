@@ -25,7 +25,7 @@ def dashboard_summary(db: Session = Depends(get_db), _: User = Depends(get_curre
 
     active_alerts = db.query(Alert).filter(Alert.status == AlertStatus.ACTIVE).all()
     safety_alerts = len(
-        [a for a in active_alerts if a.alert_type.value in ("NO_HELMET", "NO_PPE", "MOBILE_USAGE")]
+        [a for a in active_alerts if a.alert_type.value in ("NO_HELMET", "NO_GLOVES", "NO_BOOTS", "NO_GLASSES", "NO_SAFETY_VEST", "MOBILE_PHONE")]
     )
     gas_alerts = len([a for a in active_alerts if a.alert_type.value in ("GAS_WARNING", "GAS_CRITICAL")])
 

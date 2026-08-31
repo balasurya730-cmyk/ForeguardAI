@@ -20,16 +20,16 @@ def test_create_safety_event_creates_evidence_and_alert(client, auth_headers):
 
 def test_mobile_usage_violation(client, auth_headers):
     resp = client.post("/api/safety/events", json={
-        "violation_type": "MOBILE_USAGE",
+        "violation_type": "PHONE",
         "confidence": 0.91,
         "duration_seconds": 17.0,
     })
     assert resp.status_code == 201
-    assert resp.json()["violation_type"] == "MOBILE_USAGE"
+    assert resp.json()["violation_type"] == "PHONE"
 
 
 def test_list_safety_events(client, auth_headers):
-    client.post("/api/safety/events", json={"violation_type": "NO_PPE", "confidence": 0.8, "duration_seconds": 5})
+    client.post("/api/safety/events", json={"violation_type": "NO_VEST", "confidence": 0.8, "duration_seconds": 5})
     resp = client.get("/api/safety/events", headers=auth_headers)
     assert resp.status_code == 200
     assert len(resp.json()) == 1

@@ -43,9 +43,9 @@ def _build_report(db: Session, since: datetime, period: str) -> dict:
     recommended_actions = []
     if avg_health < 80:
         recommended_actions.append("Schedule preventive maintenance for machines with declining health scores.")
-    if violation_breakdown.get("NO_HELMET") or violation_breakdown.get("NO_PPE"):
-        recommended_actions.append("Reinforce PPE compliance briefings for flagged workers/shifts.")
-    if violation_breakdown.get("MOBILE_USAGE"):
+    if any(violation_breakdown.get(h) for h in ["NO_HELMET", "NO_GLOVES", "NO_BOOTS", "NO_GLASSES", "NO_SAFETY_VEST"]):
+        recommended_actions.append("Reinforce PPE protocols; multiple workers cited for missing gear.")
+    if violation_breakdown.get("MOBILE_PHONE"):
         recommended_actions.append("Review mobile-phone policy enforcement in hazardous zones.")
     if gas_incidents:
         recommended_actions.append("Inspect gas sensors/ventilation in zones that crossed thresholds.")

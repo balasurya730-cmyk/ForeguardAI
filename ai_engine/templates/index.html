@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Industrial Safety & Violation Evidence System</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #090d16;
+            --bg-card: rgba(18, 26, 43, 0.75);
+            --bg-card-hover: rgba(26, 38, 62, 0.85);
+            --border-card: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(0, 242, 254, 0.3);
+            
+            --primary: #00f2fe;
+            --primary-glow: rgba(0, 242, 254, 0.4);
+            --secondary: #4facfe;
+            --accent-green: #00e676;
+            --accent-amber: #ffb703;
+            --accent-red: #ff4757;
+            --accent-purple: #a855f7;
+            
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --font-family: 'Outfit', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body.theme-classic {
+            --bg-dark: #f1f5f9;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f8fafc;
+            --border-card: #cbd5e1;
+            --border-glow: rgba(2, 132, 199, 0.4);
+            --primary: #0284c7;
+            --primary-glow: rgba(2, 132, 199, 0.2);
+            --secondary: #0369a1;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(255, 71, 87, 0.05) 0%, transparent 40%);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-bottom: 50px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Top Navigation Header */
+        header {
+            background: rgba(13, 19, 33, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-card);
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #000;
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .logo-title {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            background: linear-gradient(to right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-subtitle {
+            font-size: 12px;
+            color: var(--primary);
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .status-badge {
+            background: rgba(0, 230, 118, 0.12);
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            color: var(--accent-green);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-green);
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 230, 118, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 230, 118, 0); }
+        }
+
+        .btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-card);
+            color: var(--text-main);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #000;
+            border: none;
+            box-shadow: 0 4px 15px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            box-shadow: 0 6px 20px var(--primary-glow);
+        }
+
+        .btn-danger {
+            background: rgba(255, 71, 87, 0.15);
+            border-color: rgba(255, 71, 87, 0.3);
+            color: var(--accent-red);
+        }
+
+        .btn-danger:hover {
+            background: rgba(255, 71, 87, 0.25);
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 1600px;
+            margin: 24px auto;
+            padding: 0 24px;
+        }
+
+        /* Stat Metrics Cards */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .metric-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-card);
+            border-radius: 16px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            border-color: rgba(0, 242, 254, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .metric-info h4 {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .metric-info .val {
+            font-size: 32px;
+            font-weight: 800;
+            font-family: var(--font-mono);
+        }
+
+        .metric-icon-box {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: justify;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .icon-blue { background: rgba(0, 242, 254, 0.1); color: var(--primary); }
+        .icon-green { background: rgba(0, 230, 118, 0.1); color: var(--accent-green); }
+        .icon-red { background: rgba(255, 71, 87, 0.15); color: var(--accent-red); }
+        .icon-amber { background: rgba(255, 183, 3, 0.1); color: var(--accent-amber); }
+
+        /* Main Workspace Grid */
+        .workspace-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        @media (max-width: 1200px) {
+            .workspace-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .glass-panel {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .panel-title {
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .panel-title i {
+            color: var(--primary);
+        }
+
+        /* Video Feed Player */
+        .video-container {
+            position: relative;
+            width: 100%;
+            background: #000;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-hud {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            right: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .hud-tag {
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-family: var(--font-mono);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .controls-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 16px;
+            gap: 16px;
+        }
+
+        .slider-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .slider-group label {
+            font-size: 13px;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .slider-group input[type="range"] {
+            flex: 1;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Real-Time Alerts Sidebar Feed */
+        .alerts-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-height: 480px;
+            overflow-y: auto;
+            padding-right: 6px;
+        }
+
+        .alerts-feed::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .alerts-feed::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .alert-item {
+            background: rgba(255, 71, 87, 0.08);
+            border: 1px solid rgba(255, 71, 87, 0.25);
+            border-left: 4px solid var(--accent-red);
+            border-radius: 12px;
+            padding: 14px 16px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            animation: fadeIn 0.4s ease;
+            transition: all 0.2s ease;
+        }
+
+        .alert-item:hover {
+            background: rgba(255, 71, 87, 0.15);
+            transform: translateX(3px);
+        }
+
+        .alert-item.medium {
+            background: rgba(255, 165, 0, 0.08);
+            border-color: rgba(255, 165, 0, 0.25);
+            border-left-color: var(--accent-amber);
+        }
+
+        .alert-icon-wrap {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(255, 71, 87, 0.2);
+            color: var(--accent-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .alert-item.medium .alert-icon-wrap {
+            background: rgba(255, 165, 0, 0.2);
+            color: var(--accent-amber);
+        }
+
+        .alert-details {
+            flex: 1;
+        }
+
+        .alert-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .alert-time {
+            font-size: 11px;
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+        }
+
+        .alert-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Evidence Gallery Section */
+        .evidence-section {
+            margin-top: 10px;
+        }
+
+        .filter-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .filter-chip {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-card);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .filter-chip.active, .filter-chip:hover {
+            background: rgba(0, 242, 254, 0.12);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .evidence-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .evidence-card:hover {
+            border-color: rgba(0, 242, 254, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .evidence-thumb-wrap {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .evidence-thumb-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .evidence-card:hover .evidence-thumb-wrap img {
+            transform: scale(1.05);
+        }
+
+        .evidence-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255, 71, 87, 0.85);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .evidence-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .evidence-violation-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .evidence-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-bottom: 14px;
+            font-family: var(--font-mono);
+        }
+
+        .evidence-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .evidence-actions .btn {
+            flex: 1;
+            justify-content: center;
+        }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-card {
+            background: #111827;
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            max-width: 800px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0, 242, 254, 0.2);
+            animation: zoomIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-header {
+            padding: 18px 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid var(--border-card);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-body {
+            padding: 24px;
+        }
+
+        .modal-img-wrap {
+            width: 100%;
+            max-height: 420px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 48px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-state i {
+            font-size: 48px;
+            color: rgba(255, 255, 255, 0.15);
+            margin-bottom: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo-box">
+            <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+                <div class="logo-title">SafetyGuard AI Vision</div>
+                <div class="logo-subtitle">Real-Time Industrial Safety & Evidence Monitoring</div>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <div class="status-badge">
+                <div class="status-dot"></div>
+                AI Detector Live
+            </div>
+            <button class="btn" onclick="toggleTheme()" id="themeBtn">
+                <i class="fa-solid fa-palette"></i> Classic UI Mode
+            </button>
+            <button class="btn btn-primary" onclick="triggerManualSnapshot()">
+                <i class="fa-solid fa-camera"></i> Capture Evidence
+            </button>
+            <button class="btn" onclick="toggleAudioAlerts()" id="audioBtn">
+                <i class="fa-solid fa-volume-high"></i> Sound On
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="container">
+
+        <!-- Metrics Row -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-info">
+                    <h4>Safety Compliance Score</h4>
+                    <div class="val" id="complianceScore" style="color: var(--accent-green)">98.5%</div>
+                </div>
+                <div class="metric-icon-box icon-green"><i class="fa-solid fa-circle-check"></i></div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-info">
+                    <h4>Total Frames Scanned</h4>
+                    <div class="val" id="totalScans">0</div>
+                </div>
+                <div class="metric-icon-box icon-blue"><i class="fa-solid fa-video"></i></div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-info">
+                    <h4>Logged Violations</h4>
+                    <div class="val" id="totalViolations" style="color: var(--accent-red)">0</div>
+                </div>
+                <div class="metric-icon-box icon-red"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-info">
+                    <h4>Critical Hazards</h4>
+                    <div class="val" id="criticalViolations" style="color: var(--accent-amber)">0</div>
+                </div>
+                <div class="metric-icon-box icon-amber"><i class="fa-solid fa-fire"></i></div>
+            </div>
+        </div>
+
+        <!-- Main Workspace -->
+        <div class="workspace-grid">
+            
+            <!-- Left Column: Live AI Video Feed -->
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <i class="fa-solid fa-expand"></i> Live Camera Detection Feed
+                    </div>
+                    <span style="font-size: 12px; color: var(--text-muted); font-family: var(--font-mono);" id="activeModelTag">
+                        Model: Loaded
+                    </span>
+                </div>
+
+                <div class="video-container">
+                    <img src="/video_feed" id="videoFeed" alt="Live Camera Video Stream">
+                    <div class="video-hud">
+                        <div class="hud-tag"><i class="fa-solid fa-circle-dot" style="color: red;"></i> REC LIVE</div>
+                        <div class="hud-tag" id="camTag">Cam #0 (Main Area)</div>
+                    </div>
+                </div>
+
+                <div class="controls-row">
+                    <div class="slider-group">
+                        <label for="confSlider"><i class="fa-solid fa-sliders"></i> AI Confidence Threshold:</label>
+                        <input type="range" id="confSlider" min="0.1" max="0.9" step="0.05" value="0.35" onchange="updateConfidence(this.value)">
+                        <span id="confValue" style="font-family: var(--font-mono); color: var(--primary);">35%</span>
+                    </div>
+
+                    <button class="btn btn-danger" onclick="clearAllEvidence()">
+                        <i class="fa-solid fa-trash-can"></i> Clear Logs
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Column: Real-Time Violation Alert Stream -->
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <i class="fa-solid fa-bell" style="color: var(--accent-red);"></i> Real-Time Violation Alerts
+                    </div>
+                    <span style="font-size: 11px; background: rgba(255,71,87,0.2); color: var(--accent-red); padding: 4px 8px; border-radius: 4px; font-weight: 700;">LIVE FEED</span>
+                </div>
+
+                <div class="alerts-feed" id="alertsFeed">
+                    <div class="empty-state">
+                        <i class="fa-solid fa-shield"></i>
+                        <p>No safety violations detected yet.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Evidence Gallery Section -->
+        <div class="glass-panel evidence-section">
+            <div class="panel-header">
+                <div class="panel-title">
+                    <i class="fa-solid fa-box-archive"></i> Violation Snapshot Evidence Logs
+                </div>
+                <button class="btn btn-primary" onclick="exportCSVReport()">
+                    <i class="fa-solid fa-download"></i> Export CSV Report
+                </button>
+            </div>
+
+            <!-- Category Filter Bar -->
+            <div class="filter-bar">
+                <div class="filter-chip active" onclick="filterEvidence('all', this)">All Evidence</div>
+                <div class="filter-chip" onclick="filterEvidence('NO-Hardhat (No helmet)', this)">No Helmet</div>
+                <div class="filter-chip" onclick="filterEvidence('NO-Mask', this)">No Mask</div>
+                <div class="filter-chip" onclick="filterEvidence('NO-Safety Vest', this)">No Safety Vest</div>
+                <div class="filter-chip" onclick="filterEvidence('smoking', this)">Smoking Hazard</div>
+                <div class="filter-chip" onclick="filterEvidence('phone', this)">Mobile Phone Usage</div>
+            </div>
+
+            <!-- Evidence Cards Grid -->
+            <div class="evidence-grid" id="evidenceGrid">
+                <div class="empty-state" style="grid-column: 1 / -1;">
+                    <i class="fa-solid fa-images"></i>
+                    <p>No evidence logs available. Snapshots will automatically appear here when safety violations occur.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Evidence Detail Modal -->
+    <div class="modal-overlay" id="evidenceModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="logo-title" id="modalTitle">Evidence Violation Record</div>
+                <button class="btn" onclick="closeModal()"><i class="fa-solid fa-xmark"></i> Close</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-img-wrap">
+                    <img id="modalImg" src="" alt="Evidence Snapshot Preview">
+                </div>
+                <div class="evidence-meta" id="modalMeta"></div>
+                <div style="display: flex; gap: 12px; margin-top: 16px;">
+                    <a id="modalDownloadBtn" href="" download class="btn btn-primary" style="flex: 1; text-decoration: none; justify-content: center;">
+                        <i class="fa-solid fa-file-arrow-down"></i> Download High-Res Image
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Web Audio API Sound Generator -->
+    <script>
+        let audioEnabled = true;
+        let activeViolationFilter = 'all';
+        let previousViolationCount = 0;
+
+        // Play Beep Alert Sound using Web Audio API
+        function playAlertSound() {
+            if (!audioEnabled) return;
+            try {
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(880, audioCtx.currentTime); // A5 note
+                osc.frequency.exponentialRampToValueAtTime(440, audioCtx.currentTime + 0.3);
+                
+                gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.3);
+            } catch(e) {}
+        }
+
+        function toggleAudioAlerts() {
+            audioEnabled = !audioEnabled;
+            const btn = document.getElementById('audioBtn');
+            if (audioEnabled) {
+                btn.innerHTML = '<i class="fa-solid fa-volume-high"></i> Sound On';
+                btn.style.color = 'var(--text-main)';
+            } else {
+                btn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> Muted';
+                btn.style.color = 'var(--accent-red)';
+            }
+        }
+
+        // Fetch Stats
+        async function fetchStats() {
+            try {
+                const res = await fetch('/api/stats');
+                const data = await res.json();
+                
+                document.getElementById('complianceScore').innerText = data.compliance_score + '%';
+                document.getElementById('totalScans').innerText = data.total_scans.toLocaleString();
+                document.getElementById('totalViolations').innerText = data.total_violations;
+                document.getElementById('criticalViolations').innerText = data.critical_violations;
+                
+                const modelFileName = data.active_model.split('\\').pop().split('/').pop();
+                document.getElementById('activeModelTag').innerText = 'Model: ' + modelFileName;
+                
+                if (data.total_violations > previousViolationCount) {
+                    playAlertSound();
+                    previousViolationCount = data.total_violations;
+                }
+            } catch(e) {
+                console.error("Error fetching stats:", e);
+            }
+        }
+
+        // Fetch Evidence
+        async function fetchEvidence() {
+            try {
+                const res = await fetch(`/api/evidence?violation=${encodeURIComponent(activeViolationFilter)}`);
+                const data = await res.json();
+                
+                renderAlertsFeed(data);
+                renderEvidenceGrid(data);
+            } catch(e) {
+                console.error("Error fetching evidence:", e);
+            }
+        }
+
+        // Render Alerts Feed
+        function renderAlertsFeed(logs) {
+            const feed = document.getElementById('alertsFeed');
+            if (!logs || logs.length === 0) {
+                feed.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fa-solid fa-shield"></i>
+                        <p>No safety violations recorded.</p>
+                    </div>`;
+                return;
+            }
+
+            let html = '';
+            logs.slice(0, 10).forEach(item => {
+                const isMedium = item.severity === 'MEDIUM';
+                html += `
+                    <div class="alert-item ${isMedium ? 'medium' : ''}">
+                        <div class="alert-icon-wrap">
+                            <i class="fa-solid ${isMedium ? 'fa-circle-exclamation' : 'fa-triangle-exclamation'}"></i>
+                        </div>
+                        <div class="alert-details">
+                            <div class="alert-title">
+                                <span>${item.violation}</span>
+                                <span class="alert-time">${item.timestamp.split(' ')[1]}</span>
+                            </div>
+                            <div class="alert-desc">${item.desc} (Conf: ${item.confidence}%)</div>
+                        </div>
+                    </div>`;
+            });
+
+            feed.innerHTML = html;
+        }
+
+        // Render Evidence Cards
+        function renderEvidenceGrid(logs) {
+            const grid = document.getElementById('evidenceGrid');
+            if (!logs || logs.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1 / -1;">
+                        <i class="fa-solid fa-images"></i>
+                        <p>No evidence snapshots match the filter criteria.</p>
+                    </div>`;
+                return;
+            }
+
+            let html = '';
+            logs.forEach(item => {
+                html += `
+                    <div class="evidence-card">
+                        <div class="evidence-thumb-wrap">
+                            <img src="${item.image}" alt="Evidence Snapshot">
+                            <div class="evidence-badge" style="background: ${item.color}">${item.severity}</div>
+                        </div>
+                        <div class="evidence-body">
+                            <div>
+                                <div class="evidence-violation-name">${item.violation}</div>
+                                <div class="evidence-meta">
+                                    <div><i class="fa-regular fa-clock"></i> ${item.timestamp}</div>
+                                    <div><i class="fa-solid fa-bullseye"></i> Confidence: ${item.confidence}%</div>
+                                    <div><i class="fa-solid fa-video"></i> ${item.camera}</div>
+                                </div>
+                            </div>
+                            <div class="evidence-actions">
+                                <button class="btn btn-primary" onclick='openModal(${JSON.stringify(item)})'>
+                                    <i class="fa-solid fa-eye"></i> View Detail
+                                </button>
+                                <button class="btn btn-danger" onclick="deleteEvidenceItem(${item.id})">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>`;
+            });
+
+            grid.innerHTML = html;
+        }
+
+        // Filter Logic
+        function filterEvidence(category, el) {
+            document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            activeViolationFilter = category;
+            fetchEvidence();
+        }
+
+        // Confidence Slider Update
+        async function updateConfidence(val) {
+            document.getElementById('confValue').innerText = Math.round(val * 100) + '%';
+            await fetch('/api/settings', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ conf_thresh: val })
+            });
+        }
+
+        // Trigger Snapshot
+        async function triggerManualSnapshot() {
+            try {
+                const res = await fetch('/api/trigger_snapshot', { method: 'POST' });
+                const data = await res.json();
+                if (data.status === 'success') {
+                    fetchStats();
+                    fetchEvidence();
+                    alert("Manual evidence snapshot captured successfully!");
+                } else {
+                    alert("Camera error: " + data.message);
+                }
+            } catch(e) {
+                alert("Failed to capture snapshot.");
+            }
+        }
+
+        // Clear All Evidence
+        async function clearAllEvidence() {
+            if (confirm("Are you sure you want to clear all evidence logs?")) {
+                await fetch('/api/evidence/clear', { method: 'POST' });
+                fetchStats();
+                fetchEvidence();
+            }
+        }
+
+        // Delete Item
+        async function deleteEvidenceItem(id) {
+            await fetch(`/api/evidence/delete/${id}`, { method: 'DELETE' });
+            fetchStats();
+            fetchEvidence();
+        }
+
+        // Modal View
+        function openModal(item) {
+            document.getElementById('modalTitle').innerText = item.violation + ' - Evidence Record';
+            document.getElementById('modalImg').src = item.image;
+            document.getElementById('modalDownloadBtn').href = item.image;
+            
+            document.getElementById('modalMeta').innerHTML = `
+                <div><strong>Violation Type:</strong> ${item.violation}</div>
+                <div><strong>Severity:</strong> ${item.severity}</div>
+                <div><strong>Description:</strong> ${item.desc}</div>
+                <div><strong>Timestamp:</strong> ${item.timestamp}</div>
+                <div><strong>Detection Confidence:</strong> ${item.confidence}%</div>
+                <div><strong>Source Camera:</strong> ${item.camera}</div>
+            `;
+            
+            document.getElementById('evidenceModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('evidenceModal').style.display = 'none';
+        }
+
+        // Export CSV Report
+        async function exportCSVReport() {
+            const res = await fetch('/api/evidence?violation=all');
+            const data = await res.json();
+            
+            if (data.length === 0) {
+                alert("No evidence data to export.");
+                return;
+            }
+            
+            let csv = "ID,Violation,Severity,Timestamp,Confidence,Camera,Image_URL\n";
+            data.forEach(row => {
+                csv += `"${row.id}","${row.violation}","${row.severity}","${row.timestamp}","${row.confidence}%","${row.camera}","${row.image}"\n`;
+            });
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.setAttribute('href', url);
+            a.setAttribute('download', `Safety_Violations_Report_${new Date().toISOString().slice(0,10)}.csv`);
+            a.click();
+        }
+
+        // Initial Setup & Polling
+        fetchStats();
+        fetchEvidence();
+        setInterval(fetchStats, 3000);
+        setInterval(fetchEvidence, 4000);
+    </script>
+</body>
+</html>

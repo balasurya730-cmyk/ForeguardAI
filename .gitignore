@@ -26,3 +26,4 @@ uploads/videos/*
 .DS_Store
 .vscode/
 .idea/
+backend/.venv/

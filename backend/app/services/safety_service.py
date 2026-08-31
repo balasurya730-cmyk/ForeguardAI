@@ -13,8 +13,11 @@ from app.websocket.manager import manager
 
 _ALERT_TYPE_MAP = {
     ViolationType.NO_HELMET: AlertType.NO_HELMET,
-    ViolationType.NO_PPE: AlertType.NO_PPE,
-    ViolationType.MOBILE_USAGE: AlertType.MOBILE_USAGE,
+    ViolationType.NO_GLOVES: AlertType.NO_GLOVES,
+    ViolationType.NO_BOOTS: AlertType.NO_BOOTS,
+    ViolationType.NO_GLASSES: AlertType.NO_GLASSES,
+    ViolationType.NO_SAFETY_VEST: AlertType.NO_SAFETY_VEST,
+    ViolationType.MOBILE_PHONE: AlertType.MOBILE_PHONE,
 }
 
 
@@ -67,13 +70,15 @@ async def record_violation(
         },
     )
 
-    await alert_service.raise_alert(
-        db,
-        _ALERT_TYPE_MAP[violation_type],
-        AlertSeverity.WARNING,
-        f"{violation_type.value.replace('_', ' ').title()} detected"
-        + (f" for worker #{worker_id}" if worker_id else ""),
-        related_worker_id=worker_id,
-    )
+    alert_type = _ALERT_TYPE_MAP.get(violation_type)
+    if alert_type:
+        await alert_service.raise_alert(
+            db,
+            alert_type,
+            AlertSeverity.WARNING,
+            f"{violation_type.value.replace('_', ' ').title()} detected"
+            + (f" for worker #{worker_id}" if worker_id else ""),
+            related_worker_id=worker_id,
+        )
 
     return event
