@@ -28,11 +28,13 @@ export default function Analytics() {
 
   const healthData = machines.map((m) => ({ name: m.machine_code, health: m.health_score }))
 
-  const violationCounts = events.reduce((acc, e) => {
-    const key = e.violation_type.replace('_', ' ')
-    acc[key] = (acc[key] || 0) + 1
-    return acc
-  }, {})
+  const violationCounts = events
+    .filter(e => ['NO_HELMET', 'NO_GLOVES', 'NO_BOOTS', 'NO_GLASSES', 'NO_SAFETY_VEST', 'MOBILE_PHONE'].includes(e.violation_type))
+    .reduce((acc, e) => {
+      const key = e.violation_type.replace('_', ' ')
+      acc[key] = (acc[key] || 0) + 1
+      return acc
+    }, {})
   const violationData = Object.entries(violationCounts).map(([name, value]) => ({ name, value }))
 
   const alertCounts = alerts.reduce((acc, a) => {

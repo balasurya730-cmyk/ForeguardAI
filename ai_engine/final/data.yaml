@@ -1,0 +1,24 @@
+path: E:/tcs/dataset/final
+train: images/train
+val: images/val
+
+names:
+  0: Person
+  1: Helmet
+  2: No helmet
+  3: Gloves
+  4: No gloves
+  5: Boots
+  6: No boots
+  7: Glasses
+  8: No glasses
+  9: Safety vest
+  10: No safety
+  11: Face mask
+  12: Face shield
+  13: Mobile phone
+  14: Tools
+  15: Machine
+  16: Machine guard
+  17: Earmuffs
+  18: Uniform

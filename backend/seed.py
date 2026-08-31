@@ -170,8 +170,8 @@ for m in random.sample(machines, 3):
 for ev in safety_events[:6]:
     alert_type = {
         ViolationType.NO_HELMET: AlertType.NO_HELMET,
-        ViolationType.NO_PPE: AlertType.NO_PPE,
-        ViolationType.MOBILE_USAGE: AlertType.MOBILE_USAGE,
+        ViolationType.NO_SAFETY_VEST: AlertType.NO_SAFETY_VEST,
+        ViolationType.MOBILE_PHONE: AlertType.MOBILE_PHONE,
     }[ev.violation_type]
     alerts.append(Alert(
         alert_type=alert_type,

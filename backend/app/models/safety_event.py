@@ -6,9 +6,25 @@ from app.database import Base
 
 
 class ViolationType(str, enum.Enum):
+    PERSON = "PERSON"
+    HELMET = "HELMET"
     NO_HELMET = "NO_HELMET"
-    NO_PPE = "NO_PPE"
-    MOBILE_USAGE = "MOBILE_USAGE"
+    GLOVES = "GLOVES"
+    NO_GLOVES = "NO_GLOVES"
+    BOOTS = "BOOTS"
+    NO_BOOTS = "NO_BOOTS"
+    GLASSES = "GLASSES"
+    NO_GLASSES = "NO_GLASSES"
+    SAFETY_VEST = "SAFETY_VEST"
+    NO_SAFETY_VEST = "NO_SAFETY_VEST"
+    FACE_MASK = "FACE_MASK"
+    FACE_SHIELD = "FACE_SHIELD"
+    MOBILE_PHONE = "MOBILE_PHONE"
+    TOOLS = "TOOLS"
+    MACHINE = "MACHINE"
+    MACHINE_GUARD = "MACHINE_GUARD"
+    EARMUFFS = "EARMUFFS"
+    UNIFORM = "UNIFORM"
 
 
 class SafetyEvent(Base):

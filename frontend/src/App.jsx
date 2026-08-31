@@ -18,6 +18,7 @@ import Evidence from './pages/Evidence.jsx'
 import Analytics from './pages/Analytics.jsx'
 import Reports from './pages/Reports.jsx'
 import Settings from './pages/Settings.jsx'
+import LiveCameras from './pages/LiveCameras.jsx'
 
 export default function App() {
   return (
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/machines/:id" element={<MachineDetails />} />
           <Route path="/workers" element={<Workers />} />
           <Route path="/workers/:id" element={<WorkerDetails />} />
+          <Route path="/cameras" element={<LiveCameras />} />
           <Route path="/safety" element={<Safety />} />
           <Route path="/gas" element={<GasMonitoring />} />
           <Route path="/runtime" element={<RuntimeControlPage />} />

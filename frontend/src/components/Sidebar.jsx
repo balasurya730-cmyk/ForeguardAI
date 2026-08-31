@@ -11,12 +11,15 @@ import {
   FileText,
   Settings,
   ShieldCheck,
+  Video
 } from 'lucide-react'
+import { useAuth } from '../hooks/useAuth.jsx'
 
 const NAV_ITEMS = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard, end: true },
   { to: '/machines', label: 'Machines', icon: Cog },
   { to: '/workers', label: 'Workers', icon: HardHat },
+  { to: '/cameras', label: 'Live Cameras', icon: Video },
   { to: '/safety', label: 'Safety Monitoring', icon: ShieldCheck },
   { to: '/gas', label: 'Gas Monitoring', icon: Flame },
   { to: '/runtime', label: 'Runtime Control', icon: Timer },
@@ -28,6 +31,20 @@ const NAV_ITEMS = [
 ]
 
 export default function Sidebar({ open, onClose }) {
+  const { user } = useAuth()
+  
+  // Worker (OPERATOR) specific routes
+  const workerRoutes = ['/', '/machines', '/gas', '/runtime', '/settings']
+  
+  // MD (ADMIN) specific routes
+  const mdRoutes = ['/cameras', '/safety', '/evidence']
+  
+  const filteredNavItems = user?.role === 'OPERATOR' 
+    ? NAV_ITEMS.filter(item => workerRoutes.includes(item.to))
+    : user?.role === 'ADMIN'
+    ? NAV_ITEMS.filter(item => mdRoutes.includes(item.to))
+    : NAV_ITEMS
+
   return (
     <>
       {open && (
@@ -48,7 +65,7 @@ export default function Sidebar({ open, onClose }) {
         </div>
 
         <nav className="flex-1 overflow-y-auto py-3 px-3 space-y-0.5">
-          {NAV_ITEMS.map(({ to, label, icon: Icon, end }) => (
+          {filteredNavItems.map(({ to, label, icon: Icon, end }) => (
             <NavLink
               key={to}
               to={to}

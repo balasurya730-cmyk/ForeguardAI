@@ -1,0 +1,1702 @@
+[
+  {
+    "id": 1788150409391,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:56:49",
+    "image": "/static/evidence/evidence_20260831_095649_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150404925,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:56:44",
+    "image": "/static/evidence/evidence_20260831_095644_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150400475,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:56:40",
+    "image": "/static/evidence/evidence_20260831_095640_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150395996,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:56:35",
+    "image": "/static/evidence/evidence_20260831_095635_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150391544,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:56:31",
+    "image": "/static/evidence/evidence_20260831_095631_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150387199,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:56:27",
+    "image": "/static/evidence/evidence_20260831_095627_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150382651,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:56:22",
+    "image": "/static/evidence/evidence_20260831_095622_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150378215,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:56:18",
+    "image": "/static/evidence/evidence_20260831_095618_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150373814,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:56:13",
+    "image": "/static/evidence/evidence_20260831_095613_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150369370,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:56:09",
+    "image": "/static/evidence/evidence_20260831_095609_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150364905,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:56:04",
+    "image": "/static/evidence/evidence_20260831_095604_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150360497,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:56:00",
+    "image": "/static/evidence/evidence_20260831_095600_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150356039,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:55:56",
+    "image": "/static/evidence/evidence_20260831_095556_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150351504,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:55:51",
+    "image": "/static/evidence/evidence_20260831_095551_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150347090,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:55:47",
+    "image": "/static/evidence/evidence_20260831_095547_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150342603,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:55:42",
+    "image": "/static/evidence/evidence_20260831_095542_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150338133,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:55:38",
+    "image": "/static/evidence/evidence_20260831_095538_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150333638,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:55:33",
+    "image": "/static/evidence/evidence_20260831_095533_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150329163,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:55:29",
+    "image": "/static/evidence/evidence_20260831_095529_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150324773,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:55:24",
+    "image": "/static/evidence/evidence_20260831_095524_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150320389,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:55:20",
+    "image": "/static/evidence/evidence_20260831_095520_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150315898,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:55:15",
+    "image": "/static/evidence/evidence_20260831_095515_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150311452,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:55:11",
+    "image": "/static/evidence/evidence_20260831_095511_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150307113,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:55:07",
+    "image": "/static/evidence/evidence_20260831_095507_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150302594,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:55:02",
+    "image": "/static/evidence/evidence_20260831_095502_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150298201,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:54:58",
+    "image": "/static/evidence/evidence_20260831_095458_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150293743,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:54:53",
+    "image": "/static/evidence/evidence_20260831_095453_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150289239,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:54:49",
+    "image": "/static/evidence/evidence_20260831_095449_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150284756,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:54:44",
+    "image": "/static/evidence/evidence_20260831_095444_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150280299,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:54:40",
+    "image": "/static/evidence/evidence_20260831_095440_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150275843,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:54:35",
+    "image": "/static/evidence/evidence_20260831_095435_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150271363,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:54:31",
+    "image": "/static/evidence/evidence_20260831_095431_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150266912,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:54:26",
+    "image": "/static/evidence/evidence_20260831_095426_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150262408,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:54:22",
+    "image": "/static/evidence/evidence_20260831_095422_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150257853,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:54:17",
+    "image": "/static/evidence/evidence_20260831_095417_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150253392,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:54:13",
+    "image": "/static/evidence/evidence_20260831_095413_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150248936,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:54:08",
+    "image": "/static/evidence/evidence_20260831_095408_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150244492,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:54:04",
+    "image": "/static/evidence/evidence_20260831_095404_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150240022,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:54:00",
+    "image": "/static/evidence/evidence_20260831_095400_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150235451,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:53:55",
+    "image": "/static/evidence/evidence_20260831_095355_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150230936,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:53:50",
+    "image": "/static/evidence/evidence_20260831_095350_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150226451,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:53:46",
+    "image": "/static/evidence/evidence_20260831_095346_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150221989,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:53:41",
+    "image": "/static/evidence/evidence_20260831_095341_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150217530,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:53:37",
+    "image": "/static/evidence/evidence_20260831_095337_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150213094,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:53:33",
+    "image": "/static/evidence/evidence_20260831_095333_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150208642,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:53:28",
+    "image": "/static/evidence/evidence_20260831_095328_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150204173,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:53:24",
+    "image": "/static/evidence/evidence_20260831_095324_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150199712,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:53:19",
+    "image": "/static/evidence/evidence_20260831_095319_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150195220,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:53:15",
+    "image": "/static/evidence/evidence_20260831_095315_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150190774,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:53:10",
+    "image": "/static/evidence/evidence_20260831_095310_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150186330,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:53:06",
+    "image": "/static/evidence/evidence_20260831_095306_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150181714,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:53:01",
+    "image": "/static/evidence/evidence_20260831_095301_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150177246,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:52:57",
+    "image": "/static/evidence/evidence_20260831_095257_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150172759,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:52:52",
+    "image": "/static/evidence/evidence_20260831_095252_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150168404,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:52:48",
+    "image": "/static/evidence/evidence_20260831_095248_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150163801,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:52:43",
+    "image": "/static/evidence/evidence_20260831_095243_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150160907,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:52:40",
+    "image": "/static/evidence/evidence_20260831_095240_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150155008,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:52:35",
+    "image": "/static/evidence/evidence_20260831_095235_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150150344,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:52:30",
+    "image": "/static/evidence/evidence_20260831_095230_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150145860,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:52:25",
+    "image": "/static/evidence/evidence_20260831_095225_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150141271,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:52:21",
+    "image": "/static/evidence/evidence_20260831_095221_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150136694,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:52:16",
+    "image": "/static/evidence/evidence_20260831_095216_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150131477,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:52:11",
+    "image": "/static/evidence/evidence_20260831_095211_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150126810,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:52:06",
+    "image": "/static/evidence/evidence_20260831_095206_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150122242,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:52:02",
+    "image": "/static/evidence/evidence_20260831_095202_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150117686,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:51:57",
+    "image": "/static/evidence/evidence_20260831_095157_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150113164,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:51:53",
+    "image": "/static/evidence/evidence_20260831_095153_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150108539,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:51:48",
+    "image": "/static/evidence/evidence_20260831_095148_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150104008,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:51:44",
+    "image": "/static/evidence/evidence_20260831_095144_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150099461,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:51:39",
+    "image": "/static/evidence/evidence_20260831_095139_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150094824,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:51:34",
+    "image": "/static/evidence/evidence_20260831_095134_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150090267,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:51:30",
+    "image": "/static/evidence/evidence_20260831_095130_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150085719,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:51:25",
+    "image": "/static/evidence/evidence_20260831_095125_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150081171,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:51:21",
+    "image": "/static/evidence/evidence_20260831_095121_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150076589,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:51:16",
+    "image": "/static/evidence/evidence_20260831_095116_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150072017,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:51:12",
+    "image": "/static/evidence/evidence_20260831_095112_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150067484,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:51:07",
+    "image": "/static/evidence/evidence_20260831_095107_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150062905,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:51:02",
+    "image": "/static/evidence/evidence_20260831_095102_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150058336,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:50:58",
+    "image": "/static/evidence/evidence_20260831_095058_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150053809,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:50:53",
+    "image": "/static/evidence/evidence_20260831_095053_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150049296,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:50:49",
+    "image": "/static/evidence/evidence_20260831_095049_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150044656,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:50:44",
+    "image": "/static/evidence/evidence_20260831_095044_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150040044,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:50:40",
+    "image": "/static/evidence/evidence_20260831_095040_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150035461,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:50:35",
+    "image": "/static/evidence/evidence_20260831_095035_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150030915,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:50:30",
+    "image": "/static/evidence/evidence_20260831_095030_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150026337,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:50:26",
+    "image": "/static/evidence/evidence_20260831_095026_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150021761,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:50:21",
+    "image": "/static/evidence/evidence_20260831_095021_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150017209,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:50:17",
+    "image": "/static/evidence/evidence_20260831_095017_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150012692,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:50:12",
+    "image": "/static/evidence/evidence_20260831_095012_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150008047,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:50:08",
+    "image": "/static/evidence/evidence_20260831_095008_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788150003521,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:50:03",
+    "image": "/static/evidence/evidence_20260831_095003_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788149998994,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:49:58",
+    "image": "/static/evidence/evidence_20260831_094958_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788149994478,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:49:54",
+    "image": "/static/evidence/evidence_20260831_094954_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788149989871,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:49:49",
+    "image": "/static/evidence/evidence_20260831_094949_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788149985300,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:49:45",
+    "image": "/static/evidence/evidence_20260831_094945_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788149980696,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:49:40",
+    "image": "/static/evidence/evidence_20260831_094940_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788149976080,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:49:36",
+    "image": "/static/evidence/evidence_20260831_094936_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788149971432,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:49:31",
+    "image": "/static/evidence/evidence_20260831_094931_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788149966763,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:49:26",
+    "image": "/static/evidence/evidence_20260831_094926_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  },
+  {
+    "id": 1788149962172,
+    "violation": "NO-Hardhat (No helmet)",
+    "severity": "CRITICAL",
+    "desc": "Worker without hardhat/helmet detected!",
+    "color": "#ff4757",
+    "confidence": 81.6,
+    "timestamp": "2026-08-31 09:49:22",
+    "image": "/static/evidence/evidence_20260831_094922_2.jpg",
+    "camera": "Cam #0 (Main Entrance)",
+    "bbox": [
+      518,
+      66,
+      569,
+      101
+    ]
+  }
+]
